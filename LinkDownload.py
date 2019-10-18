@@ -10,14 +10,17 @@ def link_download(file, dir, username, password):
         list = fp.readlines()
         for link in enumerate(list):
             with threading.Lock():
-                file_name = os.path.basename(link[1])
-                file_name = file_name.strip('\n')
-                file_name = file_name.replace('?', '')
-                file_name = file_name.replace('!', '')
-                file_name = file_name.replace('%', '')
-                file_name = file_name.replace('#', '')
-                if len(file_name) > 150:
-                    file_name = file_name[0:150]
+                base_name = os.path.basename(link[1])
+                base_name = base_name.strip()
+                file_name = base_name
+                file_type_index = file_name.find(".HDF5")
+                file_name_start = 0
+                for i in range(file_type_index, 0, -1):
+                    if file_name[i] == '%':
+                        file_name_start = i + 1
+                        break
+                if not file_type_index == -1:
+                    file_name = base_name[file_name_start:file_type_index + len(".HDF5")]
                 if os.path.exists(file_name):
                     continue
 

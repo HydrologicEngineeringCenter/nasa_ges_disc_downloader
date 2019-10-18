@@ -1,5 +1,6 @@
 import os, sys, requests
 
+
 def check_dir(user_dir):
     if (os.path.isdir(user_dir) == False):
         try:
@@ -16,6 +17,7 @@ def check_dir(user_dir):
         os.chdir(user_dir)
     return user_dir
 
+
 def check_url(user_url):
     try:
         r = requests.get(user_url)
@@ -26,6 +28,7 @@ def check_url(user_url):
         print("URL does not exist or unreachable\n")
         sys.exit()
     return user_url
+
 
 def check_file(file):
     if not os.path.exists(file):
