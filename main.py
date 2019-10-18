@@ -27,7 +27,7 @@ def main():
                                           args.thread_count)
     end = time.time()
     elapsed_time = end - start
-    print("\n -- Total Download Time: %d:%.2d --\n" % (elapsed_time / 60, elapsed_time % (elapsed_time / 60)))
+    print("\n -- Total Download Time: %d:%.2d --\n" % (elapsed_time / 60, elapsed_time % 60))
     return 0
 
 
