@@ -21,3 +21,4 @@ To download the latest release of the software see [releases](https://github.com
 ```bat
 nasa_ges_disc_downloader -l=C:/Temp/subset_GPM_3IMERGHH_06_20191016_220123.txt -d=C:/Temp -u=majortom -p=rocketman321 -n=10
 ```
+See full example in the project [wiki](https://github.com/HydrologicEngineeringCenter/nasa_ges_disc_downloader/wiki/NASA-GES-DISC-Downloader-Example).
